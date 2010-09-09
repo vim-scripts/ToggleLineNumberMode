@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3234
+
+switch between "Relative" and "Absolute" line number is easy with command
+''':set nu'''
+and
+''':set rnu'''
+
+it could be more easier by a vim script:
+
+function! g:ToggleNuMode()
+	if(&rnu == 1)
+		set nu
+	else
+		set rnu
+	endif
+endfunc
+
+and a Ctrl+L key map
+nnoremap <C-L> :call g:ToggleNuMode()<cr>
+
+this is exactly what the script does, you can just put the code into your vimrc if you don't want install a plugin :)
